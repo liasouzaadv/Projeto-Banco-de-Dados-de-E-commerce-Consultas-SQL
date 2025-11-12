@@ -1,0 +1,5 @@
+# Dependências para o projeto de e-commerce SQL (SQLite + Python + Faker)
+
+faker==25.9.1
+
+# Projeto testado com Python 3.11
