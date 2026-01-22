@@ -1,6 +1,6 @@
-# 🧭 Projeto: Banco de Dados de E-commerce — Consultas SQL
+#  Projeto: Banco de Dados de E-commerce — Consultas SQL
 
-## 📘 Introdução
+##  Introdução
 
 Este projeto tem como objetivo demonstrar habilidades práticas em **SQL (Structured Query Language)** aplicadas a um cenário de **e-commerce**.
 
@@ -18,12 +18,12 @@ O objetivo foi aplicar consultas SQL progressivamente mais complexas, cobrindo d
 
 ---
 
-## 💡 Sessão 1 – Consultas de Fundamentos
+##  Sessão 1 – Consultas de Fundamentos
 
 Consultas básicas que utilizam `SELECT`, `WHERE`, `ORDER BY` e `COUNT`, fundamentais para a exploração inicial dos dados.
 
-### 🧩 Mostrar clientes do estado de “SP”
-🔍 Retorna apenas os clientes que moram no estado de São Paulo.
+###  Mostrar clientes do estado de “SP”
+ Retorna apenas os clientes que moram no estado de São Paulo.
 
 ```sql
 SELECT nome, estado
@@ -31,14 +31,14 @@ FROM clientes
 WHERE estado = 'SP';
 ```
 ---
-### 🧩 Contar quantos clientes existem no banco
+###  Contar quantos clientes existem no banco
 
 ``` sql
 SELECT COUNT(id_cliente) AS total_clientes
 FROM clientes;
 ```
 ---
-### 🧩 Ordenar produtos por preço (do mais caro para o mais barato)
+###  Ordenar produtos por preço (do mais caro para o mais barato)
 
 ``` sql
 SELECT *
@@ -46,7 +46,7 @@ FROM produtos
 ORDER BY preco DESC;
 ```
 ---
-### 🧩 Listar todos os produtos e seus preços
+###  Listar todos os produtos e seus preços
 
 ``` sql
 SELECT id_produto, nome, preco
@@ -55,12 +55,12 @@ FROM produtos;
 
 * * * * *
 
-💡 Sessão 2 -- Consultas intermediárias
+ Sessão 2 -- Consultas intermediárias
 --------------------------------------
 
 Consultas que envolvem **JOINs** para cruzar informações entre tabelas e identificar relações entre clientes, pedidos, produtos e categorias.
 
-### 🧩 Listar nomes dos clientes junto com as datas dos seus pedidos
+###  Listar nomes dos clientes junto com as datas dos seus pedidos
 
 ``` sql
 SELECT t1.nome,
@@ -71,7 +71,7 @@ ON t1.id_cliente = t2.id_cliente
 WHERE data_pedido IS NOT NULL;
 ```
 ---
-### 🧩 Mostrar o nome do produto e o nome da categoria correspondente
+###  Mostrar o nome do produto e o nome da categoria correspondente
 
 ``` sql
 SELECT t1.nome AS nome_produto,
@@ -81,7 +81,7 @@ LEFT JOIN categorias AS t2
 ON t1.id_categoria = t2.id_categoria;
 ```
 ---
-### 🧩 Ver todos os itens de pedido (produto, quantidade e total do item)
+###  Ver todos os itens de pedido (produto, quantidade e total do item)
 
 ```sql
 SELECT t3.nome AS produto,
@@ -94,7 +94,7 @@ LEFT JOIN produtos AS t3
 ON t2.id_produto = t3.id_produto;
 ```
 ---
-### 🧩 Encontrar todos os pedidos de um cliente específico (exemplo: "Ana Silva")
+###  Encontrar todos os pedidos de um cliente específico (exemplo: "Ana Silva")
 
 ``` sql
 SELECT COUNT(t1.id_pedido) AS numero_pedidos,
@@ -107,12 +107,12 @@ GROUP BY t2.nome;
 ```
 * * * * *
 
-💡 Sessão 3 -- Consultas analíticas
+ Sessão 3 -- Consultas analíticas
 ----------------------------------
 
 Consultas com **funções de agregação (SUM, AVG)** e agrupamentos (**GROUP BY**), utilizadas para gerar indicadores de negócio.
 
-### 🧩 Somar o total de vendas por categoria
+###  Somar o total de vendas por categoria
 
 ``` sql
 SELECT t4.nome AS categoria,
@@ -129,7 +129,7 @@ GROUP BY categoria
 ORDER BY total_vendas DESC;
 ```
 ---
-### 🧩 Calcular o valor total gasto por cada cliente
+###  Calcular o valor total gasto por cada cliente
 
 ```sql
 SELECT t1.id_cliente,
@@ -144,7 +144,7 @@ GROUP BY t1.id_cliente, t1.nome
 ORDER BY total_gasto DESC;
 ```
 ---
-### 🧩 Encontrar o produto mais vendido (em quantidade)
+###  Encontrar o produto mais vendido (em quantidade)
 
 ``` sql
 SELECT t2.id_produto,
@@ -158,7 +158,7 @@ ORDER BY total_vendido DESC
 LIMIT 1;
 ```
 ---
-### 🧩 Calcular o ticket médio dos pedidos
+###  Calcular o ticket médio dos pedidos
 
 ``` sql
 SELECT
@@ -175,7 +175,7 @@ FROM (
 ```
 * * * * *
 
-🧾 Considerações finais
+ Considerações finais
 -----------------------
 
 Este projeto demonstrou o uso de SQL em um contexto realista de e-commerce, abrangendo:
@@ -188,7 +188,7 @@ Este projeto demonstrou o uso de SQL em um contexto realista de e-commerce, abra
 
 -   Organização e clareza nas consultas, com boas práticas de legibilidade e alias (`AS`).
 
-📂 **Ferramentas utilizadas:**
+ **Ferramentas utilizadas:**
 
 -   **Banco de dados:** SQLite
 
